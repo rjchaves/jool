@@ -17,10 +17,11 @@ public class JooqExperiments {
     public void fuckDesignPatterns() {
         List<Foo> fooList = dummyList();
 
-        fooList = Seq.range(0, 30).zip(fooList).map(tupla -> {
-            tupla.v2.setNumber(tupla.v1.toString());
-            return tupla.v2;
-        }).toList();
+        fooList = Seq.range(0, 30)
+                .zip(fooList).map(tupla -> {
+                    tupla.v2.setNumber(tupla.v1.toString());
+                    return tupla.v2;
+                }).toList();
         print(fooList);
     }
 
